@@ -36,21 +36,39 @@ class App extends Component {
       navigate("/login");
     };
 
-    componentDidMount() {
-        //ref to database
-        const ref = firebase.database().ref('user');
-
-        ref.on('value' , snapshot => {
-            let fireUser = snapshot.val();
-            this.setState({"user":fireUser});
+    logOutUser = e => {
+        e.preventDefault();
+        this.setState({
+            displayName: null,
+            userID: null,
+            user: null
         });
 
+        firebase
+            .auth()
+            .signOut()
+            .then(() => {
+                navigate('/login');
+            });
+    };
+
+
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged(fireUser => {
+            if (fireUser) {
+                this.setState({
+                    user: fireUser,
+                    displayName: fireUser.displayName,
+                    userID: fireUser.uid
+                });
+            }
+        });
     }
 
     render() {
         return (
             <div className="App">
-                <Menu title={"Inoichi"}/>
+                <Menu title={"Inoichi"} logOutUser={this.logOutUser} user={this.state.user}/>
                 {/*<Router>*/}
                     {/*<Login path="/login"/>*/}
                     {/*<Register path="/register"/>*/}
@@ -58,7 +76,7 @@ class App extends Component {
                 {/*</Router>*/}
                 <PosedRouter>
                     <Login path="/login" />
-                    <Register path="/register" loadUser={this.loadUser}/>
+                    <Register path="/register" loadUser={this.loadUser} user={this.state.user}/>
                     <TODO path="todo"/>
                 </PosedRouter>
             </div>
