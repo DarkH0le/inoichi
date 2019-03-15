@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.9",
     "@reach/router": "^1.2.1",
+    "babel-plugin-emotion": "^10.0.9",
     "bootstrap": "4.3.1",
+    "firebase": "^5.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-pose": "^4.0.8",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-spinners": "^0.5.3",
+    "reactstrap": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
