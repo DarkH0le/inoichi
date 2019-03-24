@@ -11,9 +11,9 @@ class Menu extends Component {
         return (
 
             <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top py-0">
-                <div class="container">
+                <div className="container">
                     <Link className="navbar-brand font-weight-bold py-0" style={{fontSize:2+'em'}} to="/">{title}</Link>
-                    <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarResponsive" ariaControls="navbarResponsive" ariaExpanded="false" ariaLabel="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"/>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
@@ -24,7 +24,7 @@ class Menu extends Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/videos">Videos</Link>
+                                <Link className="nav-link" to="/">Videos</Link>
                             </li>
                             {!user && (
                                 <li className="nav-item">
@@ -36,6 +36,15 @@ class Menu extends Component {
                                     <Link className="nav-link" to="/register">Registrarse</Link>
                                 </li>)
                             }
+                            {user && (
+                                <li className="nav-item font-weight-bold ">
+                                    <Link
+                                        className="nav-item nav-link text-danger"
+                                        to="/upload">
+                                        Subir-Video
+                                    </Link>
+                                </li>
+                            )}
 
                             {user && (
                                 <li className="nav-item font-weight-bold ">

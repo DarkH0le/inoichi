@@ -35,7 +35,7 @@ class Login extends Component {
             registrationInfo.password
         )
         .then(() => {
-          navigate('/meetings');
+          navigate('/');
         })
         .catch(error => {
           if (error.message !== null) {
@@ -57,7 +57,7 @@ class Login extends Component {
                 <div className="row">
                   <div className="col-md-9 col-lg-8 mx-auto">
                     <h3 className="login-heading mb-4 font-weight-bold">Ingresar!</h3>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} className="pb-2">
                       <div className="form-label-group">
                         <input type="email" id="inputEmail" className="form-control" placeholder="Email address"
                                name="formEmail"
@@ -73,13 +73,16 @@ class Login extends Component {
                         <label htmlFor="inputPassword">Password</label>
                       </div>
 
-                      <div className="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1"/>
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember password</label>
-                      </div>
-                      <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                      {/*<div className="custom-control custom-checkbox mb-3">*/}
+                        {/*<input type="checkbox" className="custom-control-input" id="customCheck1"/>*/}
+                        {/*<label className="custom-control-label" htmlFor="customCheck1">Remember password</label>*/}
+                      {/*</div>*/}
+                      <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Ingresar</button>
                       <div className="text-center">
-                        <Link className="small" to="/todo">Forgot password?</Link></div>
+                        <Link className="small" to="/todo">Olvidaste tu Contrasena?</Link></div>
+
+                      <div className="text-center">
+                        <Link className="small" to="/register">No tienes Cuenta aun?</Link></div>
                     </form>
                   </div>
                 </div>

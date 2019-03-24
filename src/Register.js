@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import firebase from './Firebase';
 import { DotLoader } from 'react-spinners';
 
-import {Link ,Redirect,Router} from '@reach/router';
+import {Link} from '@reach/router';
 import { Fade } from 'reactstrap';
 import { Alert } from 'reactstrap';
 import './Register.css';

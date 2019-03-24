@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import firebase from './Firebase';
 // import {Router} from '@reach/router';
+import firebase from './Firebase';
+
 
 //Animations
 import { Router, navigate, Location } from '@reach/router';
@@ -14,6 +15,9 @@ import Menu from './Menu';
 import Login from './Login';
 import Register from './Register';
 import TODO from './Todo';
+import Video from './Video';
+import Home from './Home'
+
 
 class App extends Component {
 
@@ -33,7 +37,7 @@ class App extends Component {
                 });
             });
         });
-      navigate("/login");
+      navigate("/");
     };
 
     logOutUser = e => {
@@ -52,6 +56,12 @@ class App extends Component {
             });
     };
 
+    registerVideoToFireStore = (newVideo) => {
+        let ref = firebase
+            .firestore()
+            .collection("videos");
+        ref.add(newVideo);
+    };
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(fireUser => {
@@ -72,12 +82,15 @@ class App extends Component {
                 {/*<Router>*/}
                     {/*<Login path="/login"/>*/}
                     {/*<Register path="/register"/>*/}
-                    {/*<TODOo path="/todoo"/>*/}
+                    {/*<TODO path="/todo"/>*/}
+                    {/*<Video path="/upload"/>*/}
                 {/*</Router>*/}
                 <PosedRouter>
                     <Login path="/login" />
                     <Register path="/register" loadUser={this.loadUser} user={this.state.user}/>
-                    <TODO path="todo"/>
+                    <TODO path="/todo"/>
+                    <Video style={{overFlow:'hidden'}} path="/upload" user={this.state.user} registerVideo={this.registerVideoToFireStore}/>
+                    <Home path="/" user={this.state.user}/>
                 </PosedRouter>
             </div>
         );
