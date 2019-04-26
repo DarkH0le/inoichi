@@ -17,6 +17,7 @@ import Register from './Register';
 import TODO from './Todo';
 import Video from './Video';
 import Home from './Home'
+import Profile from "./Profile";
 
 
 class App extends Component {
@@ -91,6 +92,7 @@ class App extends Component {
                     <TODO path="/todo"/>
                     <Video style={{overFlow:'hidden'}} path="/upload" user={this.state.user} registerVideo={this.registerVideoToFireStore}/>
                     <Home path="/" user={this.state.user}/>
+                    <Profile path="/profile"/>
                 </PosedRouter>
             </div>
         );
