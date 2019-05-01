@@ -92,7 +92,7 @@ class App extends Component {
                     <TODO path="/todo"/>
                     <Video style={{overFlow:'hidden'}} path="/upload" user={this.state.user} registerVideo={this.registerVideoToFireStore}/>
                     <Home path="/" user={this.state.user}/>
-                    <Profile path="/profile"/>
+                    <Profile path="/profile" user={this.state.user}/>
                 </PosedRouter>
             </div>
         );

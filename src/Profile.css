@@ -189,7 +189,8 @@ p {
     /* overflow: hidden; */
     box-sizing: border-box;
     width: 300px;
-    height: 25px;
+    height: 300px;
+    max-height: 200px;
     margin: 0;
     border: 1px solid #fff;
     border-radius: 50%;
