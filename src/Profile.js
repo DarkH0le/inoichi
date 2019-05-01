@@ -5,6 +5,7 @@ import './Profile.css'
 import firebase from "./Firebase";
 class Profile extends Component {
 
+    state = {status:"TODO:V"};
 
 
     constructor(props) {
@@ -117,12 +118,12 @@ class Profile extends Component {
         {/*    <div className="profile-content">*/}
         {/*        <div className="container">*/}
                     <div className="row">
-                        <div className="col-1 ml-5">
-                            <div className="profile2 float-left text-left">
-                                <div className="avatar">
+                        <div className="col ml-5">
+                            <div className="profile2">
+                                <div className="avatar text-center">
                                     <img
                                         src={this.state.image && this.state.image}
-                                        alt="Circle Image" className="img-raised rounded img-fluid float-left"/>
+                                        alt="Circle Image" className="img-raised rounded img-fluid"/>
                                         {/*alt="Circle Image" className="img-raised rounded-circle img-fluid float-right"/>*/}
                                 </div>
                                 <div className="name">
@@ -147,7 +148,7 @@ class Profile extends Component {
                         <h2 style={{marginTop: "48px"}}>{this.state.description && this.state.description} </h2>
                     </div>
                     <div className="row">
-                        <div className="col-md-6 ml-auto mr-auto">
+                        <div className="col-md-10 ml-auto mr-auto">
                             <div className="profile-tabs">
                                 <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                                     <li className="nav-item">
@@ -241,6 +242,51 @@ class Profile extends Component {
                     {/*    /!*</div>*!/*/}
                     {/*</div>*/}
                     {/*/!*fin*!/*/}
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
+                        <div className="card card-inverse card-info" >
+                            <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
+                            {/*<div className="card-footer">*/}
+                            {/*    <small>Creacion: AYER</small>*/}
+                            {/*    <button className="btn btn-info float-right btn-sm">Follow</button>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
+                        <div className="card card-inverse card-info" >
+                            <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
+                            {/*<div className="card-footer">*/}
+                            {/*    <small>Creacion: AYER</small>*/}
+                            {/*    <button className="btn btn-info float-right btn-sm">Follow</button>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
+                        <div className="card card-inverse card-info" >
+                            <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
+                            {/*<div className="card-footer">*/}
+                            {/*    <small>Creacion: AYER</small>*/}
+                            {/*    <button className="btn btn-info float-right btn-sm">Follow</button>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
+                        <div className="card card-inverse card-info" >
+                            <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
+                            {/*<div className="card-footer">*/}
+                            {/*    <small>Creacion: AYER</small>*/}
+                            {/*    <button className="btn btn-info float-right btn-sm">Follow</button>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
+                    <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
+                        <div className="card card-inverse card-info" >
+                            <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
+                            {/*<div className="card-footer">*/}
+                            {/*    <small>Creacion: AYER</small>*/}
+                            {/*    <button className="btn btn-info float-right btn-sm">Follow</button>*/}
+                            {/*</div>*/}
+                        </div>
+                    </div>
                     <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{display: "inline-flex"}}>
                         <div className="card card-inverse card-info" >
                             <video className="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/inoichi-97330.appspot.com/o/videos%2FWhatsApp%20Video%202019-03-07%20at%2011.31.55%20AM.mp4?alt=media&token=fa027708-da7b-4831-8214-fa012b7f9a05" onMouseOver={this.playAndControl} onMouseOut={this.outPlayAndControl} onClick={this.fullScreen}/>
