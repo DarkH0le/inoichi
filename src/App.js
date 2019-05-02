@@ -17,6 +17,7 @@ import Register from './Register';
 import TODO from './Todo';
 import Video from './Video';
 import Home from './Home';
+import Profile from './Profile';
 import EditProfile from './EditProfile';
 import GetCertification from './GetCertification';
 
@@ -95,6 +96,7 @@ class App extends Component {
                     <Home path="/" user={this.state.user}/>
                     <EditProfile path="/editprofile"/>
                     <GetCertification path="/getcertification"/>
+                    <Profile path="/profile" user={this.state.user}/>
                 </PosedRouter>
             </div>
         );
