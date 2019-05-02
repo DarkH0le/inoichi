@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import {Router} from '@reach/router';
 import firebase from './Firebase';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
 
 
 //Animations
@@ -96,7 +98,8 @@ class App extends Component {
                     <Home path="/" user={this.state.user}/>
                     <EditProfile path="/editprofile"/>
                     <GetCertification path="/getcertification"/>
-                    <Profile path="/profile" user={this.state.user}/>
+                    <Profile path="/profile/:user" user={this.state.user}/>
+                    {/*<Route path="/profile/:user" component={Profile} key="profile" />*/}
                 </PosedRouter>
             </div>
         );

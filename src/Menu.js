@@ -18,11 +18,14 @@ class Menu extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
-                                <Link className="nav-link" to="/">{title}
-                                    <span className="sr-only">(current)</span>
-                                </Link>
-                            </li>
+
+                            {user && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={`/profile/${user.uid}`}>Perfil
+                                        <span className="sr-only">(current)</span>
+                                    </Link>
+                                </li>)
+                            }
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">Videos</Link>
                             </li>
