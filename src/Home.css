@@ -54,14 +54,15 @@
 .profile {
     position: absolute;
     top: -12px;
-    display: inline-block;
+    display: block;
     overflow: hidden;
     box-sizing: border-box;
-    width: 25px;
-    height: 25px;
-    margin: 0;
-    border: 1px solid #fff;
-    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    /*border: 1px solid #fff;*/
+    /*border-radius: 50%;*/
 }
 .profile-badges {
     position: absolute;
