@@ -155,7 +155,7 @@ a .material-icons {
 
 .img-fluid, .img-thumbnail {
     max-width: 100%;
-    height: auto;
+    max-height: 300px;
 }
 
 .title {
@@ -412,4 +412,12 @@ footer p a{
 footer p a:hover {
     color: #9f26aa;
     text-decoration: none;
+}
+
+h2.description{
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #999;
+    border-bottom: 1px solid rgba(0, 0, 0,0.1);
+    padding-bottom: 5px;
 }
