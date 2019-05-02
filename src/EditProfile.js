@@ -29,7 +29,7 @@ class EditProfile extends Component {
                         
                         <h3>Información Personal</h3>
 
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Nombre:</label>
                                 <div class="col-lg-8">

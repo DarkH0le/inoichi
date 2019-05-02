@@ -8,13 +8,7 @@ import { Badge } from 'reactstrap';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {BounceLoader} from "react-spinners";
-import {navigate} from "@reach/router";
 
-// const stylesProgress = {
-//     root: {
-//         flexGrow: 1,
-//     },
-// };
 
 
 class Video extends Component {

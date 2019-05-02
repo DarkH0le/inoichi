@@ -3,7 +3,6 @@ import React , {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Profile.css'
 import firebase from "./Firebase";
-import Modal from "reactstrap/es/Modal";
 class Profile extends Component {
 
     state = {status:"TODO:V"};
