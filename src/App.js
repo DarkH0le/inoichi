@@ -16,8 +16,9 @@ import Login from './Login';
 import Register from './Register';
 import TODO from './Todo';
 import Video from './Video';
-import Home from './Home'
-import Profile from "./Profile";
+import Home from './Home';
+import EditProfile from './EditProfile';
+import GetCertification from './GetCertification';
 
 
 class App extends Component {
@@ -92,7 +93,8 @@ class App extends Component {
                     <TODO path="/todo"/>
                     <Video style={{overFlow:'hidden'}} path="/upload" user={this.state.user} registerVideo={this.registerVideoToFireStore}/>
                     <Home path="/" user={this.state.user}/>
-                    <Profile path="/profile" user={this.state.user}/>
+                    <EditProfile path="/editprofile"/>
+                    <GetCertification path="/getcertification"/>
                 </PosedRouter>
             </div>
         );
