@@ -58,6 +58,8 @@ class Register extends Component {
                     this.props.loadUser(this.state.formUserName);
                 }
             });
+
+
     };
 
 

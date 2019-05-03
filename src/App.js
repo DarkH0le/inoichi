@@ -40,6 +40,11 @@ class App extends Component {
                     displayName:fireUser.displayName,
                     userID:fireUser.uid
                 });
+                firebase.firestore()
+                    .collection("profiles").doc(this.state.userID).set({"displayName":fireUser.displayName,
+                                                                                    "email":fireUser.email,
+                                                                                    "verified:":fireUser.emailVerified,
+                                                                                    "formComplete:":false});
             });
         });
       navigate("/");
