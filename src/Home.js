@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css'
 import Modal from 'react-bootstrap/Modal';
 import {Button} from "react-bootstrap";
+import {Link} from "@reach/router";
 
 class Home extends Component {
 
@@ -13,13 +14,16 @@ class Home extends Component {
 
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleShow2 = this.handleShow2.bind(this);
+        this.handleClose2 = this.handleClose2.bind(this);
 
         this.state = {
             msg:"",
             videos:null,
             show:false,
             actualDescription: null,
-            actualTitle: null
+            actualTitle: null  ,
+            login: firebase.auth().currentUser
         };
 
         this.like = this.like.bind(this);
@@ -79,6 +83,13 @@ class Home extends Component {
         this.setState({actualDescription:e.target.getAttribute('description')});
         this.setState({actualTitle:e.target.getAttribute('title')});
         this.setState({ show: true });
+    }
+    handleClose2(){
+        this.setState({ login: false });
+    }
+
+    handleShow2() {
+        this.setState({ login: true });
     }
 
     like(e) {
@@ -147,7 +158,7 @@ class Home extends Component {
                                     <button className="btn btn-info btn-sm btn-" onClick={this.like} videoname={key}>Te gusto el video?</button>
                                 }
                                 {!firebase.auth().currentUser &&
-                                        <button className="btn btn-info btn-sm btn-">Ingresa V</button>
+                                        <button className="btn btn-info btn-sm btn-" onClick={this.handleShow2}>Te gusto el video?</button>
                                 }
                             </div>
                             <div><small className="text-center p-0 m-0">Creacion: {value.upload_at &&this.getTimeElpse(value.upload_at)}</small></div>
@@ -170,6 +181,12 @@ class Home extends Component {
                     <Modal show={this.state.show} onHide={this.handleClose}>
                         <Modal.Header className="text-bold">{this.state.actualTitle}</Modal.Header>
                         <Modal.Body>{this.state.actualDescription}</Modal.Body>
+                    </Modal>
+                </>
+                <>
+                    <Modal show={this.state.login} onHide={this.handleClose2}>
+                        <Modal.Header className="text-bold">Requisito!</Modal.Header>
+                        <Modal.Body><Link className="nav-link" to="/login">Necesitas <b>ingresar</b> en tu cuenta para poder darle like a un video!</Link></Modal.Body>
                     </Modal>
                 </>
             </div>
