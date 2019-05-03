@@ -1,14 +1,27 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, {Component} from 'react';
 import firebase from './Firebase';
+import {Link, Redirect, Router} from "@reach/router";
 
 class EditProfile extends Component {
 
-
+    state = {
+        "formUserName":"",
+        "formLastName":"",
+        "formPassword":"",
+        "formValidPassword":"",
+        "passwordMatch":true,
+        "fireError":null,
+        "formDisplayName":"",
+        "loading":false
+    };
 
 
 	render()
     {
+        if(!firebase.auth().currentUser){
+            return <Link className="nav-link" to="/login">Para editar tu perfil primero tiene que hacer <b>LOG IN</b></Link>
+        }
         return (
             <div class="container">
                 <h1>Edita tu Perfil</h1>
@@ -42,12 +55,12 @@ class EditProfile extends Component {
                                     <input class="form-control" type="text" value="Bishop"></input>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Email:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" value="janesemail@gmail.com"></input>
-                                </div>
-                            </div>
+                            {/*<div class="form-group">*/}
+                            {/*    <label class="col-lg-3 control-label">Email:</label>*/}
+                            {/*    <div class="col-lg-8">*/}
+                            {/*        <input class="form-control" type="text" value="janesemail@gmail.com"></input>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                             
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Usuario:</label>
@@ -79,8 +92,6 @@ class EditProfile extends Component {
                     </div>
                 </div>
             </div>
-
-           
         )
     };
 }

@@ -94,7 +94,8 @@ class Video extends Component {
                             ...prevState.video,
                             url: downloadURL,
                             upload_at: firebase.firestore.FieldValue.serverTimestamp(),
-                            upload_by: this.props.user.email
+                            upload_by: this.props.user.email,
+                            likes:{}
                         }
                     }));
                     console.log(this.state);

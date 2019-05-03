@@ -44,7 +44,7 @@ class App extends Component {
                     .collection("profiles").doc(this.state.userID).set({"displayName":fireUser.displayName,
                                                                                     "email":fireUser.email,
                                                                                     "verified:":fireUser.emailVerified,
-                                                                                    "formComplete:":false});
+                                                                                    "formComplete":false});
             });
         });
       navigate("/");
